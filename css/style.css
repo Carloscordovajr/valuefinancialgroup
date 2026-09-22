@@ -1028,6 +1028,23 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
 
 .divider { height: 1px; background: var(--gray-200); }
 
+/* ---------- Page hero (secondary pages) ---------- */
+.page-hero {
+  padding-top: 168px;
+  padding-bottom: 72px;
+  background: linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 100%);
+  color: var(--white);
+}
+@media (min-width: 1024px) { .page-hero { padding-top: 200px; padding-bottom: 96px; } }
+.page-hero .eyebrow { justify-content: flex-start; }
+.page-hero h1 {
+  color: var(--white);
+  font-size: clamp(32px, 4.4vw, 50px);
+  max-width: 20ch;
+}
+.page-hero .lede { margin-top: 20px; max-width: 60ch; }
+.page-hero-cta { margin-top: 32px; }
+
 /* ---------- Legal content pages ---------- */
 .legal-hero {
   padding-top: 168px;

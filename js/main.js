@@ -158,14 +158,19 @@
     calculate();
   }
 
-  /* ---------- Consultation form (Formspree) ---------- */
-  var leadForm = document.getElementById("consultation-form");
-  if (leadForm) {
-    var submitBtn = document.getElementById("form-submit");
-    var submitLabel = submitBtn ? submitBtn.querySelector(".btn-label") : null;
-    var errorBox = document.getElementById("form-error");
+  /* ---------- Lead forms (Formspree) ---------- */
+  function wireLeadForm(config) {
+    var form = document.getElementById(config.formId);
+    if (!form) return;
 
-    leadForm.addEventListener("submit", function (e) {
+    var submitBtn = document.getElementById(config.submitId);
+    var submitLabel = submitBtn ? submitBtn.querySelector(".btn-label") : null;
+    var defaultLabel = submitLabel ? submitLabel.textContent : "";
+    var errorBox = document.getElementById(config.errorId);
+    var success = document.getElementById(config.successId);
+    var fieldsWrap = form.querySelector(config.fieldsSelector);
+
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
 
       if (errorBox) {
@@ -173,25 +178,23 @@
         errorBox.classList.remove("is-visible");
       }
 
-      if (!leadForm.reportValidity()) {
+      if (!form.reportValidity()) {
         return;
       }
 
       if (submitBtn) submitBtn.disabled = true;
       if (submitLabel) submitLabel.textContent = "Sending…";
 
-      var formData = new FormData(leadForm);
+      var formData = new FormData(form);
 
-      fetch(leadForm.action, {
+      fetch(form.action, {
         method: "POST",
         body: formData,
         headers: { Accept: "application/json" },
       })
         .then(function (response) {
           if (response.ok) {
-            var formFields = leadForm.querySelector(".consult-fields");
-            var success = document.getElementById("form-success");
-            if (formFields) formFields.style.display = "none";
+            if (fieldsWrap) fieldsWrap.style.display = "none";
             if (success) {
               success.classList.add("is-visible");
               success.setAttribute("tabindex", "-1");
@@ -215,10 +218,26 @@
         })
         .finally(function () {
           if (submitBtn) submitBtn.disabled = false;
-          if (submitLabel) submitLabel.textContent = "Request a Consultation";
+          if (submitLabel) submitLabel.textContent = defaultLabel;
         });
     });
   }
+
+  wireLeadForm({
+    formId: "consultation-form",
+    submitId: "form-submit",
+    errorId: "form-error",
+    successId: "form-success",
+    fieldsSelector: ".consult-fields",
+  });
+
+  wireLeadForm({
+    formId: "careers-form",
+    submitId: "careers-submit",
+    errorId: "careers-error",
+    successId: "careers-success",
+    fieldsSelector: ".careers-fields",
+  });
 
   /* ---------- Current year ---------- */
   var yearEl = document.getElementById("current-year");
