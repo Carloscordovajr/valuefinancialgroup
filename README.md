@@ -1,6 +1,6 @@
 # Value Financial Group
 
-Marketing website for Value Financial Group (brand: Value Home Loans), an Arizona mortgage brokerage led by Carlos Cordova.
+Marketing website for Value Financial Group, an Arizona mortgage brokerage led by Carlos Cordova.
 
 A static site — no build step, no dependencies.
 
