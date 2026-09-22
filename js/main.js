@@ -158,17 +158,65 @@
     calculate();
   }
 
-  /* ---------- Consultation form ---------- */
+  /* ---------- Consultation form (Formspree) ---------- */
   var leadForm = document.getElementById("consultation-form");
   if (leadForm) {
+    var submitBtn = document.getElementById("form-submit");
+    var submitLabel = submitBtn ? submitBtn.querySelector(".btn-label") : null;
+    var errorBox = document.getElementById("form-error");
+
     leadForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      var formFields = leadForm.querySelector(".consult-fields");
-      var success = document.getElementById("form-success");
-      if (formFields) formFields.style.display = "none";
-      if (success) success.classList.add("is-visible");
-      success && success.setAttribute("tabindex", "-1");
-      success && success.focus();
+
+      if (errorBox) {
+        errorBox.textContent = "";
+        errorBox.classList.remove("is-visible");
+      }
+
+      if (!leadForm.reportValidity()) {
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitLabel) submitLabel.textContent = "Sending…";
+
+      var formData = new FormData(leadForm);
+
+      fetch(leadForm.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      })
+        .then(function (response) {
+          if (response.ok) {
+            var formFields = leadForm.querySelector(".consult-fields");
+            var success = document.getElementById("form-success");
+            if (formFields) formFields.style.display = "none";
+            if (success) {
+              success.classList.add("is-visible");
+              success.setAttribute("tabindex", "-1");
+              success.focus();
+            }
+          } else {
+            return response.json().then(function (data) {
+              var message =
+                data && data.errors && data.errors.length
+                  ? data.errors.map(function (err) { return err.message; }).join(" ")
+                  : "Something went wrong sending your request. Please try again, or call us directly.";
+              throw new Error(message);
+            });
+          }
+        })
+        .catch(function (err) {
+          if (errorBox) {
+            errorBox.textContent = err.message || "Something went wrong sending your request. Please try again, or call us directly.";
+            errorBox.classList.add("is-visible");
+          }
+        })
+        .finally(function () {
+          if (submitBtn) submitBtn.disabled = false;
+          if (submitLabel) submitLabel.textContent = "Request a Consultation";
+        });
     });
   }
 
