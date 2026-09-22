@@ -248,8 +248,10 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
   color: var(--white);
 }
 .brand-mark {
-  width: 34px; height: 34px;
+  height: 34px;
+  width: auto;
   flex-shrink: 0;
+  object-fit: contain;
 }
 .brand-text {
   display: flex;
