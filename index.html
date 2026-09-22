@@ -505,8 +505,10 @@
       </div>
 
       <div class="form-panel reveal" style="max-width:820px;margin-inline:auto;">
-        <form id="consultation-form" novalidate>
+        <form id="consultation-form" action="https://formspree.io/f/xdekgdyb" method="POST">
           <div class="consult-fields">
+            <input type="hidden" name="_subject" value="New consultation request — Value Financial Group">
+            <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-grid">
               <div class="field">
                 <label for="f-first">First Name</label>
@@ -594,11 +596,14 @@
 
             <div class="form-foot">
               <p class="form-privacy">We only ask for what's needed to start a conversation. We will never request your Social Security number or bank account details through this form.</p>
-              <button type="submit" class="btn btn-gold">Request a Consultation</button>
+              <p class="form-error" id="form-error" role="alert"></p>
+              <button type="submit" class="btn btn-gold" id="form-submit">
+                <span class="btn-label">Request a Consultation</span>
+              </button>
             </div>
           </div>
 
-          <div class="form-success" id="form-success">
+          <div class="form-success" id="form-success" role="status">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
             <h3>Thank you — we've received your request.</h3>
             <p>A member of the Value Financial Team will follow up shortly to schedule your consultation.</p>
@@ -722,7 +727,7 @@
         <span>Equal Housing Opportunity</span>
       </div>
       <p class="footer-disclosure">
-        Value Financial Group ("Value Home Loans") is a mortgage brokerage team. NMLS ID: [Company NMLS # to be provided]. Carlos Cordova, Team Leader — NMLS ID: [Individual NMLS # to be provided]. Licensed in Arizona; additional state licensing information available upon request. This is not a commitment to lend. All loans subject to credit approval, underwriting guidelines, and property appraisal. Rates and programs subject to change without notice. Equal Housing Opportunity.
+        Value Financial Group ("Value Home Loans") is a mortgage brokerage team. Company NMLS ID #2133511. Carlos Cordova, Team Leader — NMLS ID #1918110. Licensed in Arizona; additional state licensing information available upon request. This is not a commitment to lend. All loans subject to credit approval, underwriting guidelines, and property appraisal. Rates and programs subject to change without notice. Equal Housing Opportunity.
       </p>
     </div>
 
