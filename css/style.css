@@ -155,6 +155,7 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
   line-height: 1.65;
 }
 .bg-navy .lede { color: rgba(255,255,255,0.72); }
+@media (max-width: 640px) { .lede-compact { font-size: 15px; } }
 
 .body-text { color: var(--gray-600); line-height: 1.7; }
 .bg-navy .body-text { color: rgba(255,255,255,0.7); }
