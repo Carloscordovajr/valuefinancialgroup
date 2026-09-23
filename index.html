@@ -392,83 +392,34 @@
     </div>
   </section>
 
-  <!-- ============ CALCULATOR ============ -->
-  <section class="section-pad bg-gray" id="calculator">
+  <!-- ============ RATES & NEWS ============ -->
+  <section class="section-pad bg-gray" id="rates">
     <div class="container">
       <div class="section-head center reveal">
-        <span class="eyebrow" style="justify-content:center;">Payment Calculator</span>
-        <h2>See What a Mortgage Could Look Like.</h2>
-        <p class="lede" style="margin-top:16px;">Adjust the numbers to estimate a monthly payment and cash to close. This is a starting point for the conversation, not a loan offer.</p>
+        <span class="eyebrow" style="justify-content:center;">Live Market Data</span>
+        <h2>Today's Rates &amp; Mortgage News.</h2>
+        <p class="lede" style="margin-top:16px;">Live data from Mortgage News Daily, a trusted industry source for real-time rate indices and market commentary. These are national averages, not a personalized quote — reach out for numbers specific to your scenario.</p>
       </div>
 
-      <div class="calc-panel reveal">
-        <form class="calc-inputs" id="calc-form">
-          <div class="field-grid">
-            <div class="field full">
-              <label for="calc-price">Home Price</label>
-              <div class="input-affix prefix"><span>$</span><input type="text" inputmode="numeric" id="calc-price" value="450,000" aria-describedby="calc-price-help"></div>
-            </div>
-
-            <div class="field">
-              <label for="calc-down">Down Payment</label>
-              <div class="input-affix suffix"><input type="text" inputmode="numeric" id="calc-down" value="10"><span>%</span></div>
-            </div>
-            <div class="field">
-              <label for="calc-rate">Interest Rate</label>
-              <div class="input-affix suffix"><input type="text" inputmode="decimal" id="calc-rate" value="6.75"><span>%</span></div>
-            </div>
-
-            <div class="field">
-              <label for="calc-term">Loan Term</label>
-              <select id="calc-term">
-                <option value="30">30 years</option>
-                <option value="20">20 years</option>
-                <option value="15">15 years</option>
-                <option value="10">10 years</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="calc-tax">Property Tax</label>
-              <div class="input-affix suffix"><input type="text" inputmode="decimal" id="calc-tax" value="0.6"><span>%/yr</span></div>
-            </div>
-
-            <div class="field">
-              <label for="calc-insurance">Homeowners Insurance</label>
-              <div class="input-affix prefix"><span>$</span><input type="text" inputmode="numeric" id="calc-insurance" value="1,400"></div>
-            </div>
-            <div class="field">
-              <label for="calc-hoa">HOA (monthly)</label>
-              <div class="input-affix prefix"><span>$</span><input type="text" inputmode="numeric" id="calc-hoa" value="0"></div>
-            </div>
-
-            <div class="field full">
-              <label for="calc-closing">Estimated Closing Costs</label>
-              <div class="input-affix suffix"><input type="text" inputmode="decimal" id="calc-closing" value="2.5"><span>% of price</span></div>
-            </div>
+      <div class="rates-widgets reveal">
+        <div class="rates-widget-card">
+          <div class="mnd-rates-widget" style="width: 300px; height: 495px; font-size: 12px; ">
+            <div class="w-header" style="text-align: center; padding:4px 0;background-color: #a8813a; color: #ffffff;"> <a href="https://www.mortgagenewsdaily.com/mortgage-rates" target="_blank" rel="noopener" style="color: #ffffff;text-decoration:none;">Current Interest Rates</a></div>
+            <iframe src="//widgets.mortgagenewsdaily.com/widget/f/rates?t=expanded&sn=true&sc=true&c=a8813a&u=&cbu=&w=298&h=445" width="300" height="445" frameborder="0" scrolling="no" title="Mortgage News Daily current interest rates" style="border: solid 1px #a8813a; border-width: 0 1px;box-sizing:border-box;width:300px;height:445px;display:block;"></iframe>
+            <div class="w-footer" style="text-align: center; padding:4px 0;background-color: #a8813a; color: #ffffff;">View More <a href="https://www.mortgagenewsdaily.com/mortgage-rates" target="_blank" rel="noopener" style="color: #ffffff;text-decoration:none;">Interest Rates</a></div>
           </div>
-          <p class="calc-note" id="calc-price-help">Figures are placeholders you can edit. Property tax and closing cost percentages are general estimates — your actual costs depend on the property and lender.</p>
-        </form>
+        </div>
 
-        <div class="calc-results">
-          <div class="result-row"><span>Loan Amount</span><span id="result-loanamount">—</span></div>
-          <div class="result-row"><span>Principal &amp; Interest</span><span id="result-pi">—</span></div>
-          <div class="result-row"><span>Property Taxes</span><span id="result-tax">—</span></div>
-          <div class="result-row"><span>Homeowners Insurance</span><span id="result-insurance">—</span></div>
-          <div class="result-row" style="border-bottom:none;"><span>HOA</span><span id="result-hoa">—</span></div>
-
-          <div class="result-total">
-            <div class="result-label">Estimated Total Monthly Payment</div>
-            <div class="result-amount" id="result-total">—<span>/mo</span></div>
+        <div class="rates-widget-card">
+          <div class="mnd-news-widget" style="width: 300px; height: 250px; font-size: 16px; ">
+            <div class="w-header" style="text-align: center; padding:4px 0;background-color: #a8813a; color: #ffffff;">Mortgage and <a href="https://www.mortgagenewsdaily.com" target="_blank" rel="noopener" style="color: #ffffff;text-decoration:none;">Real Estate News</a></div>
+            <iframe src="//widgets.mortgagenewsdaily.com/widget/f/news?t=fadesingle&ss=true&c=a8813a&u=&cbu=&w=294&h=200&fs=16&nh=10&gs=5&bgc=ffffff&hlc=a8813a&sc=000000" width="300" height="200" frameborder="0" scrolling="no" title="Mortgage News Daily latest headlines" style="border: solid 3px #a8813a; border-width: 0 3px;box-sizing:border-box;width:300px;height:200px;display:block;"></iframe>
+            <div class="w-footer" style="text-align: center; padding:4px 0;background-color: #a8813a; color: #ffffff;">View <a href="https://www.mortgagenewsdaily.com/mortgage-rates" target="_blank" rel="noopener" style="color: #ffffff;text-decoration:none;">Today's Mortgage Rates</a></div>
           </div>
-
-          <div class="result-cashclose">
-            <span>Estimated Cash to Close</span>
-            <strong id="result-cashclose">—</strong>
-          </div>
-
-          <p class="result-disclaimer">This calculator provides estimates for general informational purposes only. It is not a loan offer, pre-approval, or commitment to lend. Actual rates, payments, taxes, insurance, and closing costs vary by borrower, property, and lender.</p>
         </div>
       </div>
+
+      <p class="rates-attribution">Rate index and news data provided by <a href="https://www.mortgagenewsdaily.com" target="_blank" rel="noopener">Mortgage News Daily</a>. This is not a personalized rate quote, a loan offer, or a commitment to lend.</p>
     </div>
   </section>
 
@@ -625,7 +576,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">What costs should I expect at closing?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-          <div class="faq-a"><div class="faq-a-inner">Closing costs typically include lender fees, title and escrow charges, prepaid taxes and insurance, and other third-party costs. Our calculator can give you a general estimate, and we'll provide specifics once you're working with a lender.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Closing costs typically include lender fees, title and escrow charges, prepaid taxes and insurance, and other third-party costs. We'll walk you through a specific estimate once we know your loan program and property.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">How do I know how much home I can comfortably afford?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
@@ -680,7 +631,7 @@
           <li><a href="#loan-options">Loan Options</a></li>
           <li><a href="#homebuyers">Homebuyers</a></li>
           <li><a href="#investors">Investors</a></li>
-          <li><a href="#calculator">Payment Calculator</a></li>
+          <li><a href="#rates">Rates &amp; News</a></li>
         </ul>
       </div>
 
