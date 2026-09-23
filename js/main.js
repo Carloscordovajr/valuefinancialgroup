@@ -164,4 +164,51 @@
   /* ---------- Current year ---------- */
   var yearEl = document.getElementById("current-year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------- Lender partner carousel ---------- */
+  var lenderTrack = document.querySelector(".lender-track-inner");
+  if (lenderTrack && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var lenderCards = lenderTrack.querySelectorAll(".lender-card");
+    var lenderTotal = lenderCards.length / 2; // list is duplicated for a seamless loop
+    var lenderStep = 0;
+    var lenderSlot = 0;
+    var lenderTimer = null;
+
+    function lenderMeasure() {
+      var cardRect = lenderCards[0].getBoundingClientRect();
+      var gap = parseFloat(getComputedStyle(lenderTrack).gap) || 0;
+      lenderSlot = cardRect.width + gap;
+    }
+
+    function lenderAdvance() {
+      lenderStep++;
+      lenderTrack.style.transform = "translateX(-" + (lenderStep * lenderSlot) + "px)";
+      if (lenderStep >= lenderTotal) {
+        setTimeout(function () {
+          lenderTrack.style.transition = "none";
+          lenderStep = 0;
+          lenderTrack.style.transform = "translateX(0)";
+          void lenderTrack.offsetWidth;
+          lenderTrack.style.transition = "";
+        }, 650);
+      }
+    }
+
+    function lenderStart() {
+      lenderTimer = setInterval(lenderAdvance, 2600);
+    }
+    function lenderStop() {
+      clearInterval(lenderTimer);
+    }
+
+    lenderMeasure();
+    lenderStart();
+
+    var lenderTrackEl = document.querySelector(".lender-track");
+    if (lenderTrackEl) {
+      lenderTrackEl.addEventListener("mouseenter", lenderStop);
+      lenderTrackEl.addEventListener("mouseleave", lenderStart);
+    }
+    window.addEventListener("resize", lenderMeasure);
+  }
 })();
