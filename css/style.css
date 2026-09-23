@@ -991,7 +991,9 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
 @media (min-width: 768px) {
   .footer-grid { grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr; gap: 32px; }
 }
-.footer-brand .brand { color: var(--white); margin-bottom: 18px; }
+.footer-brand .brand { color: var(--white); margin-bottom: 18px; gap: 16px; }
+.footer-brand .brand-mark { height: 56px; }
+.footer-brand .brand-text strong { font-size: 24px; }
 .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 34ch; color: rgba(255,255,255,0.55); }
 .footer-col h4 {
   font-family: var(--font-body);
