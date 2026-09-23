@@ -653,6 +653,7 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
 @media (min-width: 1024px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
 
 .team-card {
+  display: block;
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-md);
@@ -704,14 +705,6 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
   color: var(--gray-700);
 }
 .team-card-contact a:hover { color: var(--gold-700); }
-.team-card-links-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 28px;
-}
-.team-card-contact a.apply-now-link { color: var(--gold-700); font-weight: 600; }
-.team-card-contact a.apply-now-link:hover { color: var(--gold-600); }
 
 /* ---------- Founder story ---------- */
 .story-grid {
