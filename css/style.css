@@ -708,7 +708,7 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  gap: 28px;
 }
 .team-card-contact a.apply-now-link { color: var(--gold-700); font-weight: 600; }
 .team-card-contact a.apply-now-link:hover { color: var(--gold-600); }
@@ -743,7 +743,7 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
   margin-bottom: 18px;
   font-size: 15.5px;
 }
-.story-cta-row { display: flex; flex-wrap: wrap; gap: 16px; }
+.story-cta-row { display: flex; flex-wrap: wrap; gap: 24px; }
 
 /* ---------- Rates & News widgets ---------- */
 .rates-widgets {
