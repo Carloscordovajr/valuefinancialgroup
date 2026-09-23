@@ -432,7 +432,7 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
 }
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(2, auto);
   gap: 34px;
   margin-top: 64px;
   padding-top: 32px;
