@@ -23,20 +23,92 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<!-- TODO: add a "streetAddress" field to the PostalAddress object below once available, to match the Gilbert, AZ Google Business Profile exactly -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FinancialService",
+  "@type": "MortgageBroker",
+  "@id": "https://myvaluefinancial.com/#business",
   "name": "Value Financial Group",
-  "description": "Mortgage brokerage serving Arizona homebuyers, move-up buyers, high-income borrowers, and investors with conventional, FHA, jumbo, investment property, and refinance financing.",
+  "description": "Mortgage brokerage serving Arizona homebuyers, move-up buyers, high-income borrowers, and investors with conventional, FHA, VA, jumbo, investment property, and refinance financing.",
+  "url": "https://myvaluefinancial.com/",
   "telephone": "+1-623-755-7528",
   "email": "carlos@myvaluefinancial.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gilbert",
+    "addressRegion": "AZ",
+    "addressCountry": "US"
+  },
   "areaServed": ["Arizona", "Texas", "California"],
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "NMLS ID",
+    "value": "2133511"
+  },
   "founder": {
     "@type": "Person",
     "name": "Carlos Cordova",
-    "jobTitle": "Team Leader, Value Financial Group"
+    "jobTitle": "Team Leader, Value Financial Group",
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "NMLS ID",
+      "value": "1918110"
+    }
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do I need for a down payment?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends on the loan program. Some programs allow for a low or no down payment, while conventional and jumbo loans typically require more. We'll walk through what applies to your situation." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between FHA and conventional?",
+      "acceptedAnswer": { "@type": "Answer", "text": "FHA loans are government-backed and often allow for lower down payments and more flexible credit requirements. Conventional loans aren't government-backed and can offer more flexibility once you meet the qualifying guidelines. The right fit depends on your finances and goals." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a jumbo loan?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A jumbo loan finances homes above conventional loan limits. These loans often carry different qualification and reserve requirements, which we'll review together based on the property and price point." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I finance an investment property?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Investment property financing typically involves different down payment, reserve, and rate considerations than a primary residence. We'll look at cash flow and your broader strategy, not just the rate." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I buy now or wait?",
+      "acceptedAnswer": { "@type": "Answer", "text": "That depends on your financial picture, goals, and the market — not a one-size-fits-all answer. A consultation can help you understand what makes sense for your situation right now." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does my credit score affect my mortgage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Your credit score can influence which programs you qualify for and the rate you're offered. We'll review your credit profile as part of understanding your full financing picture." }
+    },
+    {
+      "@type": "Question",
+      "name": "What costs should I expect at closing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Closing costs typically include lender fees, title and escrow charges, prepaid taxes and insurance, and other third-party costs. We'll walk you through a specific estimate once we know your loan program and property." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know how much home I can comfortably afford?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Affordability is about more than approval — it's about how a payment fits your monthly cash flow, savings, and other goals. That's the starting point of every consultation." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I refinance my existing mortgage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Possibly. Whether a refinance makes sense depends on your current rate, goals, and how long you plan to stay in the home. We'll help you evaluate if it actually improves your position." }
+    }
+  ]
 }
 </script>
 </head>
@@ -56,6 +128,8 @@
     <nav class="nav-links" aria-label="Primary">
       <a href="#home">Home</a>
       <a href="#loan-options">Loan Options</a>
+      <a href="va-loans-arizona.html">VA Loans</a>
+      <a href="jumbo-loans-arizona.html">Jumbo Loans</a>
       <a href="#homebuyers">Homebuyers</a>
       <a href="team.html">About</a>
       <a href="#resources">Resources</a>
@@ -85,6 +159,8 @@
   <nav class="mobile-links" aria-label="Mobile">
     <a href="#home">Home</a>
     <a href="#loan-options">Loan Options</a>
+    <a href="va-loans-arizona.html">VA Loans</a>
+    <a href="jumbo-loans-arizona.html">Jumbo Loans</a>
     <a href="#homebuyers">Homebuyers</a>
     <a href="team.html">About</a>
     <a href="#resources">Resources</a>
@@ -232,21 +308,21 @@
           <h3>FHA Loans</h3>
           <p>Low to no down-payment financing designed to help qualified buyers purchase a home.</p>
         </div>
-        <div class="loan-card reveal">
+        <a href="va-loans-arizona.html" class="loan-card reveal">
           <span class="loan-tag">VA</span>
           <h3>VA Loans</h3>
           <p>Government-backed financing for eligible veterans, service members, and surviving spouses, often with no down payment required.</p>
-        </div>
+        </a>
         <div class="loan-card reveal">
           <span class="loan-tag">First-Time Buyer</span>
           <h3>First Time Buyer Programs</h3>
           <p>Programs built to help first-time buyers get into a home, including low down payment and assistance options.</p>
         </div>
-        <div class="loan-card reveal">
+        <a href="jumbo-loans-arizona.html" class="loan-card reveal">
           <span class="loan-tag">Jumbo</span>
           <h3>Jumbo Loans</h3>
           <p>Financing for your forever home, structured for higher loan amounts above conventional limits.</p>
-        </div>
+        </a>
         <div class="loan-card reveal">
           <span class="loan-tag">DSCR</span>
           <h3>DSCR Loans</h3>
@@ -737,6 +813,9 @@
         <h4>Explore</h4>
         <ul>
           <li><a href="#loan-options">Loan Options</a></li>
+          <li><a href="va-loans-arizona.html">VA Loans</a></li>
+          <li><a href="jumbo-loans-arizona.html">Jumbo Loans</a></li>
+          <li><a href="gilbert-az-mortgage-broker.html">Serving Gilbert &amp; the East Valley</a></li>
           <li><a href="#homebuyers">Homebuyers</a></li>
           <li><a href="#investors">Investors</a></li>
           <li><a href="#rates">Rates &amp; News</a></li>
