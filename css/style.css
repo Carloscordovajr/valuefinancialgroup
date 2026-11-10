@@ -241,6 +241,7 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
   align-items: center;
   justify-content: space-between;
   height: 82px;
+  max-width: 1480px;
 }
 
 .brand {
